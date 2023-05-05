@@ -1,0 +1,1 @@
+# HR Manager with Vite and React
