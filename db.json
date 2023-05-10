@@ -18,47 +18,44 @@
   },
   "customers": [
     {
-      "id": 1,
       "name": "Manolo",
-      "phone": 102013313,
-      "email": "manolo@test.ag",
-      "company": "Company 102013"
+      "company": "Muri Rocket",
+      "email": "manolo@muri-rocket.ag",
+      "phone": "102013313",
+      "notes": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr",
+      "id": 1
     },
     {
       "id": 2,
       "name": "Karen",
       "phone": 138198313,
-      "email": "marta@test.ag",
-      "company": "Company 138198"
+      "email": "karen@airmus.ag",
+      "company": "Airmus",
+      "notes": "sed diam nonumy eirmod tempor invidunt ut labore"
     },
     {
       "id": 3,
       "name": "Josue",
       "phone": 31983913,
-      "email": "josue@test.ag",
-      "company": "Company 319839"
+      "email": "josue@verbio-electron.ag",
+      "company": "Verbio Electron",
+      "note": "no sea takimata sanctus est Lorem ipsum dolor sit amet"
     },
     {
-      "id": 4,
       "name": "Miguel",
-      "phone": 319381983,
-      "email": "miguel@test.ag",
-      "company": "Company 319381"
+      "company": "Home AG",
+      "email": "miguel@home.ag",
+      "phone": "319381983",
+      "notes": "At vero eos et accusam et justo duo dolores et ea rebum.",
+      "id": 4
     },
     {
       "id": 5,
       "name": "Pedro",
       "phone": 1398198938,
-      "email": "pedro@test.ag",
-      "company": "Company 139819"
-    },
-    {
-      "name": "Marius Alt",
-      "company": "Connecta AG",
-      "email": "connecta.muller@gamil.com",
-      "phone": "03092702890",
-      "notes": "Connecta AG in Wiesbaden (Germany)",
-      "id": 6
+      "email": "pedro@lya.ag",
+      "company": "Lya Holding",
+      "notes": "Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
     }
   ]
 }
