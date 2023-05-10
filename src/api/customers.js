@@ -5,6 +5,11 @@ export async function getCustomers() {
     return resquest
 }
 
+export async function getCustomer(id) {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/${id}`)
+    const resquest = await response.json()
+    return resquest
+}
 
 export async function addCustomer(data) {
     try {
@@ -21,4 +26,33 @@ export async function addCustomer(data) {
         console.log(error)
     }
     
+}
+
+export async function updateCustomer(id, data) {
+    try {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/${id}`, {
+            method: 'PUT',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        await response.json()
+    }
+    catch(error) {
+        console.log(error)
+    }
+}
+
+
+export async function deleteCustomer(id) {
+    try {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/${id}`, {
+            method: 'DELETE',
+        })
+        await response.json()
+    }
+    catch(error) {
+        console.log(error)
+    }
 }
