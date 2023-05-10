@@ -1,6 +1,18 @@
+import { useNavigate, Form, redirect, useActionData } from "react-router-dom";
+import { deleteCustomer } from "../api/customers";
+
+export async function action({params}) {
+    await deleteCustomer(params.customerId)
+    return redirect('/')
+}
+
 function Customer( {customerData} ) {
 
-    const { name, phone, company, email } = customerData;
+    const errorsRegister = useActionData();
+
+    const { name, phone, company, email, id } = customerData;
+    const navigate = useNavigate();
+
     return (
         <tr className="border-b">
             <td className="p-6 space-y-2">
@@ -22,8 +34,27 @@ function Customer( {customerData} ) {
                 </p> 
             </td>
             <td className="p-6 flex gap-3">
-                <button type="button" className="text-blue-600 hover:text-blue-900 uppercase font-bold text-xs">Edit</button> 
-                <button type="button" className="text-red-600 hover:text-red-700 uppercase font-bold text-xs">Delete</button> 
+                <button 
+                    type="button" 
+                    className="text-blue-600 hover:text-blue-900 uppercase font-bold text-xs"
+                    onClick={ () => navigate(`/customers/${id}/edit`) }
+                    
+                >
+                    Edit
+                </button> 
+                <Form
+                    method="POST"
+                    action={`customers/${id}/delete`}
+                    onSubmit={ (e) => {
+                        if( !confirm('Do you want to delete the registry?')) {
+                            e.preventDefault();
+                        }
+                    }}
+                    className="text-xs"
+                >
+                    <button type="submit" className="text-red-600 hover:text-red-700 uppercase font-bold text-xs">Delete</button> 
+                </Form>
+                
             </td> 
         </tr>
     );
