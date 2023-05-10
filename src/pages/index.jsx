@@ -3,7 +3,6 @@ import Customer from "../components/Customer";
 import { getCustomers } from "../api/customers";
 
 export function loader() {
-
     const customers = getCustomers() 
     return customers
 }
